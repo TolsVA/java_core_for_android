@@ -6,9 +6,15 @@ public class Spectrator extends Human {
 
     public Spectrator clone(int i) {
         Spectrator spectrator = new Spectrator();
-        spectrator.name = "Посетитель № " + i;
-        spectrator.counter = i;
+//        name = "Посетитель № " + i;
+//        counter = i;
         return spectrator;
+    }
+
+
+    @Override
+    public String getPosition() {
+        return position;
     }
 
     @Override

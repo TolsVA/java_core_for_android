@@ -9,8 +9,8 @@ public class Herald extends Human {
 
     public Herald clone(int i) {
         Herald herald = new Herald();
-        herald.name = "Глошатый № " + i;
-        herald.counter = i;
+//        name = "Глошатый № " + i;
+//        counter = i;
         return herald;
     }
 

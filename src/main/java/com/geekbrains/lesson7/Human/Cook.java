@@ -7,10 +7,15 @@ public  class Cook extends Human {
 
     public Cook clone(int i) {
         Cook cook = new Cook();
-        cook.name = "Повор № " + i;
-        cook.counter = i;
+//        name = getName()+ i;
+//        counter = i;
         return cook;
     }
+
+//    public String getName() {
+//        name = "Повор № ";
+//        return name;
+//    }
 
     @Override
     public int getRubles() {

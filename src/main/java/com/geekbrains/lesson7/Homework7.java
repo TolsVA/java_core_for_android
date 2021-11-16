@@ -12,21 +12,8 @@ import java.util.Scanner;
 public class Homework7 {
     public static Scanner in = new Scanner(System.in);
     public static Scanner se = new Scanner(System.in);
-    private String kindOfAnimal;
-    private  int counter;
-    private String lainColor;
-    private String name;
-    private String coatColor;
-    private int age;
-    private String voice;
-    private int run;                   // Бег дистанция
-    private double runSpeed;           // Скорость передвижения по суше
-    private double runTime;            // Время забега
-    private int swimming;              // Плавание растояние
-    private double swimmingSpeed;         // Скорость плавания
-    private double swimmingTime;       // Время заплыва
-    private int classAnimail;
     public static void main(String[] args) throws CloneNotSupportedException {
+
 //        start();
 
         start1();
@@ -49,7 +36,7 @@ public class Homework7 {
         do {
             a = numberOfAthletes(1, 100);
             System.out.println("Ваш баланс не позволяет нанять - " + a + " глошатых.");
-        } while (admin.getRubles() < (a * 100));
+        } while (admin.getRubles() < (a * 10));
         Herald herald = new Herald();
         Herald[] heralds = new Herald[a];
 
@@ -57,9 +44,9 @@ public class Homework7 {
             int sp = 0;
             for (int i = 0; i < a; i++) {
                 heralds[i] = herald.clone(i + 1);
-                herald.setRubles(100);
-                admin.setRublesPay(100);
-                sp = sp + 100;
+                herald.setRubles(10);
+                admin.setRublesPay(10);
+                sp = sp + 10;
                 System.out.println(heralds[i].getName() + " получил " + 100 + " рублей. Пригласил 100 зрителей." +
                         " Приглашонных зрителей - " + sp + ".");
             }
@@ -101,14 +88,14 @@ public class Homework7 {
         do {
             b = numberOfAthletes(1, 10);
             System.out.println("Ваш баланс не позволяет нанять - " + b + " поворов.");
-        } while (admin.getRubles() < (b * 1000));
+        } while (admin.getRubles() < (b * 100));
 
         Cook cook = new Cook();
         Cook[] cooks = new Cook[b];
         for (int i = 0; i < cooks.length; i++) {
             cooks[i] = cook.clone(i+1);
-            cooks[i].setRubles(1000);
-            admin.setRublesPay(1000);
+            cooks[i].setRubles(100);
+            admin.setRublesPay(100);
             System.out.println(cooks[i].getName() + ". " +
                     "Получено средств - " + cooks[i].getRubles() + " рублей.");
         }
@@ -120,8 +107,8 @@ public class Homework7 {
         do {
             с = numberOfAthletes(1, 10);
             System.out.println("Ваш баланс не позволяет установить призовой фонд в размере - " + с);
-        } while (admin.getRubles() > (с * 1000));
-        System.out.println("Призовой фонд установлен в размере - " + (с * 1000));
+        } while (admin.getRubles() < (с * 10));
+        System.out.println("Призовой фонд установлен в размере - " + (с * 10));
         start(admin, spectrators, sp, b);
     }
 
@@ -142,7 +129,7 @@ public class Homework7 {
 //                "исключительное право подобрать спортсменов.\n        <<<< Введите количество животных для старта. >>>>");
 //        int a = numberOfAthletes1();
         Animal[] animals1 = new Animal[a];
-        String[][] arr = new String[a][9];
+//        String[][] arr = new String[a][9];
         for (int i = 0; i < animals1.length; i++) {
             s = (int) Math.round(Math.random() * (animals.length - 1));
             animals1[i] = animals[s].clone();
@@ -151,31 +138,41 @@ public class Homework7 {
             if (animals[s].equals(dog)) {zDog++;}
             if (animals[s].equals(duck)) {zDuck++;}
             if (animals[s].equals(fish)) {zFish++;}
-            arr[i][0] = String.valueOf(animals1[i].getCounter());
-            arr[i][1] = String.valueOf(i + 1);
-            arr[i][2] = animals1[i].getName();
-            arr[i][3] = animals1[i].getCoatColor();
-            arr[i][4] = String.valueOf(animals1[i].getAge());
-            arr[i][5] = String.valueOf(animals1[i].getRun());
-            arr[i][6] = String.valueOf(animals1[i].getRunSpeed());
-            arr[i][7] = String.valueOf(animals1[i].getSwimming());
-            arr[i][8] = String.valueOf(animals1[i].getSwimmingSpeed());
-            String[] arr1 = new String[]{arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i][4], arr[i][5], arr[i][6], arr[i][7], arr[i][8]};
-            print(animals1[i], arr1);
+
+
+//            arrayEmployee[i] = employee.clone(i);
+//            employee.print(arrayEmployee[i]);
+//            animals.getKindOfAnimal(), Integer.parseInt(String.valueOf(arr1[0])), Integer.parseInt(String.valueOf(arr1[1])),
+//            arr1[2], animals.getVoice(), arr1[3], Integer.parseInt(String.valueOf(arr1[4])),
+//            Integer.parseInt(String.valueOf(arr1[5])), Integer.parseInt(String.valueOf(arr1[7])));
+
+
+//            arr[i][0] = String.valueOf(animals1[i].getCounter());
+//            arr[i][1] = String.valueOf(i + 1);
+//            arr[i][2] = animals1[i].getName();
+//            arr[i][3] = animals1[i].getCoatColor();
+//            arr[i][4] = String.valueOf(animals1[i].getAge());
+//            arr[i][5] = String.valueOf(animals1[i].getRun());
+//            arr[i][6] = String.valueOf(animals1[i].getRunSpeed());
+//            arr[i][7] = String.valueOf(animals1[i].getSwimming());
+//            arr[i][8] = String.valueOf(animals1[i].getSwimmingSpeed());
+//            String[] arr1 = new String[]{arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i][4], arr[i][5], arr[i][6], arr[i][7], arr[i][8]};
+//            print(animals1[i], arr1);
+            print(animals1[i], i + 1);
         }
         print(a, zDog, zCat, zChicken, zDuck, zFish);
-        chooseACompetition(animals1, a, zDog, zCat, zChicken, zDuck, zFish, arr);
+        chooseACompetition(animals1, a, zDog, zCat, zChicken, zDuck, zFish);
     }
 
-    private static void chooseACompetition(Animal[] animals1, int a, int zDog, int zCat, int zChicken, int zDuck, int zFish, String[][] arr) {
+    private static void chooseACompetition(Animal[] animals1, int a, int zDog, int zCat, int zChicken, int zDuck, int zFish) {
         System.out.println("Выбери вид соревнований:      (( Бег - 1 <---> Плавание - 2. )) " +
                 "\n                                         И Л И\n" +
                 "(( Создать новый список спортсменов - 3  <--->   Закончить соревнования - 4. ))");
         int b = numberOfAthletes(1, 4);
         if (b == 1) {
-            startRun(animals1, a, zDog, zCat, zChicken, zDuck, zFish, arr);
+            startRun(animals1, a, zDog, zCat, zChicken, zDuck, zFish);
         } else if (b == 2) {
-            startSwimming(animals1, a, zDog, zCat, zChicken, zDuck, zFish, arr);
+            startSwimming(animals1, a, zDog, zCat, zChicken, zDuck, zFish);
         } else if (b == 3) {
 //            start();
         } else if (b == 4) {
@@ -187,7 +184,7 @@ public class Homework7 {
         System.out.println("GAME OVER     GAME OVER     GAME OVER     GAME OVER     GAME OVER");
     }
 
-    private static void startSwimming(Animal[] animals1, int a, int zDog, int zCat, int zChicken, int zDuck, int zFish, String[][] arr) {
+    private static void startSwimming(Animal[] animals1, int a, int zDog, int zCat, int zChicken, int zDuck, int zFish) {
         int nDog = 0;
         int nCat = 0;
         int nChicken = 0;
@@ -197,38 +194,38 @@ public class Homework7 {
         System.out.println("<<<<< Введите растояние. >>>>> PS: Рекомендуется выбрать растояние в диапазоне от 1 до 500 метров.");
         double d = numberOfAthletes(1, 500);
         for (int i = 0; i < animals1.length; i++) {
-            if (Integer.parseInt(String.valueOf(arr[i][7])) >= d) {
+            if (animals1[i].getSwimming() >= d) {
                 if (animals1[i].getClassAnimail() == 1) {nDog++;}
                 if (animals1[i].getClassAnimail() == 2) {nCat++;}
                 if (animals1[i].getClassAnimail() == 3) {nChicken++;}
                 if (animals1[i].getClassAnimail() == 4) {nDuck++;}
                 if (animals1[i].getClassAnimail() == 5) {nFish++;}
-                String[] arr1 = new String[]{arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i][4], arr[i][5], arr[i][6], arr[i][7], arr[i][8]};
-                double r = animals1[i].getSwimmingTime(d, Double.parseDouble(String.valueOf(arr[i][8])));
-                print2(animals1[i], d, r, arr1);
+//                String[] arr1 = new String[]{arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i][4], arr[i][5], arr[i][6], arr[i][7], arr[i][8]};
+                double r = animals1[i].getSwimmingTime(d, animals1[i].getSwimmingSpeed());
+                print2(animals1[i], d, r, i+1);
             } else {
                 b--;
             }
         }
         print1(b, nDog, nCat, nChicken, nDuck, nFish, animals1.length, zDog, zCat, zChicken, zDuck, zFish);
         Animal[] animals2 = new Animal[b];
-        String[][] arr2 = new String[b][9];
+//        String[][] arr2 = new String[b][9];
         int y = 0;
         for (int i = 0; i < animals1.length -1; i++) {
-            if (Double.parseDouble(String.valueOf(arr[i][7])) >= d ) {
+            if (animals1[i].getSwimming() >= d ) {
                 animals2[y] = animals1[i];
-                for (int j = 0; j < arr2[y].length; j++) {
-                    arr2[y][j] = arr[i][j];
-                }
+//                for (int j = 0; j < arr2[y].length; j++) {
+//                    arr2[y][j] = arr[i][j];
+//                }
                 y++;
             }
         }
         double m = 100000;
         int p = -1;
         for (int i = 0; i < animals2.length - 1; i++) {
-            if (animals2[i].getSwimmingTime(d, Double.parseDouble(String.valueOf(arr2[i][8]))) < m &&
-                    animals2[i].getSwimmingTime(d, Double.parseDouble(String.valueOf(arr2[i][8]))) > 0) {
-                m = animals2[i].getSwimmingTime(d, Double.parseDouble(String.valueOf(arr2[i][8])));
+            if (animals2[i].getSwimmingTime(d, animals2[i].getSwimmingSpeed()) < m &&
+                    animals2[i].getSwimmingTime(d, animals2[i].getSwimmingSpeed()) > 0) {
+                m = animals2[i].getSwimmingTime(d, animals2[i].getSwimmingSpeed());
                 p = i;
             }
         }
@@ -237,17 +234,17 @@ public class Homework7 {
                     "--------------------------------");
             System.out.printf("Победитель гонки   - %s\n%s - %s лет.\n<<<<<< Проплыл дистанцию с лучшим " +
                     "временем - %.2f минут и занял 1 место " +
-                    "в заплыве на - %s метров! >>>>>>", animals2[p].getKindOfAnimal(), arr2[p][2], arr2[p][4], m, d);
+                    "в заплыве на - %s метров! >>>>>>", animals2[p].getKindOfAnimal(), animals2[p].getName(), animals2[p].getAge(), m, d);
             System.out.println("\n---------------------------------------------" +
                     "--------------------------------------------------------------");
         } else {
             System.out.println("Слишком большое растояние для ваших спортсменов ни кто не дошол до финиша.");
         }
 
-        chooseACompetition(animals1, a, zDog, zCat, zChicken, zDuck, zFish, arr);
+        chooseACompetition(animals1, a, zDog, zCat, zChicken, zDuck, zFish);
 
     }
-    private static void startRun(Animal[] animals1, int a, int zDog, int zCat, int zChicken, int zDuck, int zFish, String[][] arr) {
+    private static void startRun(Animal[] animals1, int a, int zDog, int zCat, int zChicken, int zDuck, int zFish) {
         int nDog = 0;
         int nCat = 0;
         int nChicken = 0;
@@ -257,50 +254,51 @@ public class Homework7 {
         System.out.println("<<<<< Введите растояние. >>>>> PS: Рекомендуется выбрать растояние в диапазоне от 1 до 500 метров.");
         double d = numberOfAthletes(1, 500);
         for (int i = 0; i < animals1.length; i++) {
-            if (Double.parseDouble(String.valueOf(arr[i][5])) >= d) {
+//            if (Double.parseDouble(String.valueOf(arr[i][5])) >= d) {
+            if (animals1[i].getRun() >= d) {
                 if (animals1[i].getClassAnimail() == 1) {nDog++;}
                 if (animals1[i].getClassAnimail() == 2) {nCat++;}
                 if (animals1[i].getClassAnimail() == 3) {nChicken++;}
                 if (animals1[i].getClassAnimail() == 4) {nDuck++;}
                 if (animals1[i].getClassAnimail() == 5) {nFish++;}
-                String[] arr1 = new String[]{arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i][4], arr[i][5], arr[i][6], arr[i][7], arr[i][8]};
-                double r = animals1[i].getRunTime(d, Double.parseDouble(String.valueOf(arr[i][6])));
-                print1(animals1[i], d, r, arr1);
+//                String[] arr1 = new String[]{arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i][4], arr[i][5], arr[i][6], arr[i][7], arr[i][8]};
+                double r = animals1[i].getRunTime(d, animals1[i].getRunSpeed());
+                print1(animals1[i], d, r, i);
             } else {
                 b--;
             }
         }
         print1(b, nDog, nCat, nChicken, nDuck, nFish, animals1.length, zDog, zCat, zChicken, zDuck, zFish);
         Animal[] animals2 = new Animal[b];
-        String[][] arr2 = new String[b][9];
+//        String[][] arr2 = new String[b][9];
         int y = 0;
         for (int i = 0; i < animals1.length; i++) {
-            if (Double.parseDouble(String.valueOf(arr[i][5])) >= d ) {
+            if (animals1[i].getRun() >= d ) {
                 animals2[y] = animals1[i];
-                for (int j = 0; j < arr2[y].length; j++) {
-                    arr2[y][j] = arr[i][j];
-                }
+//                for (int j = 0; j < arr2[y].length; j++) {
+//                    arr2[y][j] = arr[i][j];
+//                }
                 y++;
             }
         }
         double m = 100000;
         int p = -1;
-        for (int i = 0; i < animals2.length; i++) {
-            if (animals2[i].getRunTime(d, Double.parseDouble(String.valueOf(arr2[i][6]))) < m &&
-                    animals2[i].getRunTime(d, Double.parseDouble(String.valueOf(arr2[i][6]))) > 0) {
-                m = animals2[i].getRunTime(d, Double.parseDouble(String.valueOf(arr2[i][6])));
+        for (int i = 0; i < animals2.length; i++) {//animals1[i].getRunTime(d, animals1[i].getRunSpeed())
+            if (animals2[i].getRunTime(d, animals2[i].getRunSpeed()) < m &&
+                    animals2[i].getRunTime(d, animals2[i].getRunSpeed()) > 0) {
+                m = animals2[i].getRunTime(d, animals2[i].getRunSpeed());
                 p = i;
             }
         }
         if (p != -1) {
             System.out.println("-----------------------------------------------------------------------------------------------------------");
             System.out.printf("Победитель гонки   - %s\n%s - %s лет.\n<<<<<< Пробежал дистанцию с лучшим временем - %.2f минут и занял 1 место " +
-                    "в забеге на - %s метров! >>>>>>", animals2[p].getKindOfAnimal(), arr2[p][2], arr2[p][4], m, d);
+                    "в забеге на - %s метров! >>>>>>", animals2[p].getKindOfAnimal(), animals2[p].getName(), animals2[p].getAge(), m, d);
             System.out.println("\n-----------------------------------------------------------------------------------------------------------");
         } else {
             System.out.println("Слишком большое растояние для ваших спортсменов ни кто не дошол до финиша.");
         }
-        chooseACompetition(animals1, a, zDog, zCat, zChicken, zDuck, zFish, arr);
+        chooseACompetition(animals1, a, zDog, zCat, zChicken, zDuck, zFish);
     }
 
 
@@ -323,18 +321,18 @@ public class Homework7 {
                         | финиша - %s     |  дистанции - %s |
                         | ---------------|-----------------|
                         | Собак    - %s   |     - %s        |
-                        | Котов    - %s   |     - %s        |              
+                        | Котов    - %s   |     - %s        |
                         | Куриц    - %s   |     - %s        |
                         | Уток     - %s   |     - %s        |
                         | Рыб      - %s   |     - %s        |
-                        |________________|_________________| 
+                        |________________|_________________|
                         """,
                 a, (aa - a), i, (ii - i), j, (jj - j), x, (xx - x), y, (yy -y), z, (zz - z));
     }
 
 
 
-    private static void print(Animal animals, String[] arr1) {
+    private static void print(Animal animals, int i) {
         System.out.printf("""
                         %s           - %04d   В забеге  - %04d
                         %s%s
@@ -343,14 +341,14 @@ public class Homework7 {
                         Мах.Дистанция:     - %s\tметров. (Мах. Дистанция для спортсмена)
                         Плавание:          - %s\t\tметров.
                         """,
-                animals.getKindOfAnimal(), Integer.parseInt(String.valueOf(arr1[0])), Integer.parseInt(String.valueOf(arr1[1])), arr1[2], animals.getVoice(),
-                arr1[3], Integer.parseInt(String.valueOf(arr1[4])), Integer.parseInt(String.valueOf(arr1[5])), Integer.parseInt(String.valueOf(arr1[7])));
+                animals.getKindOfAnimal(), animals.getCounter(), i, animals.getName(), animals.getVoice(),
+                animals.getCoatColor(), animals.getAge(), animals.getRun(), animals.getSwimming());
         System.out.println("------------------------------------------------------------------------");
     }
 
-    private static void print1(Animal animals,double d, double r, String[] arr1) {
+    private static void print1(Animal animals,double d, double r, int i) {
         System.out.printf("""
-                        %s           - %04d   В забеге  - %04d  
+                        %s           - %04d   В забеге  - %04d
                         %s%s
                         Цвет:              - %s
                         Возраст:           - %s\t\tлет.
@@ -359,15 +357,14 @@ public class Homework7 {
                         Дист. забега:      - %s\tметров.
                         Время забега:      - %.2f\tминут.
                         """,
-                animals.getKindOfAnimal(), Integer.parseInt(String.valueOf(arr1[0])), Integer.parseInt(String.valueOf(arr1[1])), arr1[2], animals.getVoice(),
-                arr1[3], Integer.parseInt(String.valueOf(arr1[4])), Integer.parseInt(String.valueOf(arr1[5])),
-                Double.parseDouble(String.valueOf(arr1[6])), d, r);
+                animals.getKindOfAnimal(), animals.getCounter(), i, animals.getName(), animals.getVoice(),
+                animals.getCoatColor(), animals.getAge(), animals.getRun(), animals.getRunSpeed(), d, r);
         System.out.println("------------------------------------------------------------------------");
     }
 
-    private static void print2(Animal animals,double d, double r, String[] arr1) {
+    private static void print2(Animal animals,double d, double r, int i) {
         System.out.printf("""
-                        %s           - %04d   В забеге  - %04d   
+                        %s           - %04d   В забеге  - %04d
                         %s%s
                         Цвет:              - %s
                         Возраст:           - %s\t\tлет.
@@ -376,9 +373,8 @@ public class Homework7 {
                         Дист. заплыв:      - %s\tметров.
                         Время заплыв:      - %.2f\tминут.
                         """,
-                animals.getKindOfAnimal(), Integer.parseInt(String.valueOf(arr1[0])), Integer.parseInt(String.valueOf(arr1[1])), arr1[2], animals.getVoice(),
-                arr1[3], Integer.parseInt(String.valueOf(arr1[4])), Integer.parseInt(String.valueOf(arr1[7])),
-                Double.parseDouble(String.valueOf(arr1[8])), d, r);
+                animals.getKindOfAnimal(), animals.getCounter(), i, animals.getName(), animals.getVoice(),
+                animals.getCoatColor(), animals.getAge(), animals.getSwimming(), animals.getSwimmingSpeed(), d, r);
         System.out.println("------------------------------------------------------------------------");
     }
     public static int numberOfAthletes1() {

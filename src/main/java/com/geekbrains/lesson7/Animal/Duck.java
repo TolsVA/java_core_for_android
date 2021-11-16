@@ -1,55 +1,26 @@
 package com.geekbrains.lesson7.Animal;
 
-public class Duck extends Bird{
+public class Duck extends Animal {
     private static int z;
-    public static String lainChickenName = "Дональд, Кряква, Просто утка-1, Просто утка-2, Просто утка-3, Снежа, Сказка";
+
     public Duck() {
-        flight = 70;
+        kindOfAnimal = "Утка:   ";
+        counter = z;
+        String lainChickenName = "Дональд, Кряква, Просто утка-1, Просто утка-2, Просто утка-3, Снежа, Сказка";
+        name = "Кличка:            - " + lainChickenName.split(", ")[(int) Math.round(Math.random() *
+                (lainChickenName.split(", ").length - 1))];
+        coatColor = lainColor.split(", ")[(int) Math.round(Math.random() * (lainColor.split(", ").length - 1))];
+        age = ((int) Math.round(Math.random()*14) + 1);
+        run =  ((int) (Math.random() * 9)) + 1;
+        runSpeed = ((int) (Math.random() * 5)) + 1;
+        swimming = (((int) (Math.random() * 5)) * 10) + 150;
+        swimmingSpeed = ((int) (Math.random() * 10)) + 30;
     }
 
     @Override
     public Duck clone() {
-        Duck duck = new Duck();
-        duck.name = "Кличка:            - " + lainChickenName.split(", ")[(int) Math.round(Math.random() * (lainChickenName.split(", ").length - 1))];
         z++;
-        duck.counter = z;
-        return duck;
-    }
-
-    @Override
-    public double getSwimmingTime(double d, double b) {
-        swimmingTime = d / b;
-        return swimmingTime;
-    }
-
-    @Override
-    public int getSwimming() {
-        swimming = (((int) (Math.random() * 5)) * 10) + 150;
-        return swimming;
-    }
-
-    @Override
-    public double getSwimmingSpeed() {
-        swimmingSpeed = ((int) (Math.random() * 10)) + 30;
-        return swimmingSpeed;
-    }
-
-    @Override
-    public int getRun() {
-        run =  ((int) (Math.random() * 9)) + 1;
-        return run;
-    }
-
-    @Override
-    public double getRunSpeed() {
-        runSpeed = ((int) (Math.random() * 5)) + 1;;
-        return runSpeed;
-    }
-
-    @Override
-    public double getRunTime(double d, double b) {
-        runTime = d/b;
-        return runTime;
+        return new Duck();
     }
 
     @Override
@@ -59,14 +30,20 @@ public class Duck extends Bird{
     }
 
     @Override
-    public int getClassAnimail() {
-        classAnimail = 4;
-        return classAnimail;
+    public double getRunTime(double d, double b) {
+        runTime = d / b;
+        return runTime;
     }
 
     @Override
-    public String getKindOfAnimal() {
-        kindOfAnimal = "Утка:   ";
-        return kindOfAnimal;
+    public double getSwimmingTime(double d, double b) {
+        swimmingTime = d / b;
+        return swimmingTime;
+    }
+
+    @Override
+    public int getClassAnimail() {
+        classAnimail = 4;
+        return classAnimail;
     }
 }

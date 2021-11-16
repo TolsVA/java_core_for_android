@@ -6,10 +6,6 @@ public class Admin extends Human {
     private  int tickets;             //Билеты
     private int rubles = 1000;                 //Билеты
 
-    public Admin() {
-
-    }
-
     @Override
     public String getPosition() {
         position = "Администратор";
@@ -22,11 +18,11 @@ public class Admin extends Human {
         return surname;
     }
 
-    @Override
-    public String getName() {
-        name = "Иван";
-        return name;
-    }
+//    @Override
+//    public String getName() {
+//        name = "Иван";
+//        return name;
+//    }
 
     @Override
     public String getPatronymic() {
@@ -34,11 +30,11 @@ public class Admin extends Human {
         return patronymic;
     }
 
-    @Override
-    public int getAge() {
-        age = 35;
-        return age;
-    }
+//    @Override
+//    public int getAge() {
+//        age = 35;
+//        return age;
+//    }
     @Override
     public int getRubles() {
         return rubles;

@@ -19,9 +19,9 @@ public class Dog extends Animal {
     }
 
     @Override
-    public Cat.Dog clone() {
+    public Dog clone() {
         z++;
-        return new Cat.Dog();
+        return new Dog();
     }
 
     @Override
