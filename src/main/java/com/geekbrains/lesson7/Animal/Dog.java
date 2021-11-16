@@ -2,55 +2,26 @@ package com.geekbrains.lesson7.Animal;
 
 public class Dog extends Animal {
     private static int z;
-    private static String lainDogName = "Гром, Бакс, Чак, Гектор, Тузик, Бобик, Зевс, Бим, Валет, Дружок";
-    protected int endurance;    // Выносливость
 
     public Dog() {
-
-    }
-
-    @Override
-    public double getSwimmingTime(double d, double b) {
-        swimmingTime = d / b;
-        return swimmingTime;
-    }
-
-    @Override
-    public int getSwimming() {
-        swimming = ((int) (Math.random() * 10)) + 10;
-        return swimming;
-    }
-    @Override
-    public double getSwimmingSpeed() {
-        swimmingSpeed = (int) (Math.random() * 5) + 1;
-        return swimmingSpeed;
-    }
-
-    @Override
-    public int getRun() {
+        kindOfAnimal = "Собака: ";
+        counter = z;
+        String lainDogName = "Гром, Бакс, Чак, Гектор, Тузик, Бобик, Зевс, Бим, Валет, Дружок";
+        name = "Кличка:            - " + lainDogName.split(", ")[(int) Math.round(Math.random() *
+                (lainDogName.split(", ").length - 1))];
+        coatColor = lainColor.split(", ")[(int) Math.round(Math.random() * (lainColor.split(", ").length - 1))];
+        age = ((int) Math.round(Math.random()*14) + 1);
         run =  (((int) (Math.random() * 10)) * 10) + 400;
-        return run;
-    }
-
-    @Override
-    public double getRunSpeed() {
         runSpeed = ((int) (Math.random() * 10)) + 50;
-        return runSpeed;
+        swimming = ((int) (Math.random() * 10)) + 10;
+        swimmingSpeed = (int) (Math.random() * 5) + 1;
+
     }
 
     @Override
-    public double getRunTime(double d, double b) {
-        runTime = d/b;
-        return runTime;
-    }
-
-    @Override
-    public Dog clone() {
-        Dog dog = new Dog();
-        dog.name = "Кличка:            - " + lainDogName.split(", ")[(int) Math.round(Math.random() * (lainDogName.split(", ").length - 1))];
+    public Cat.Dog clone() {
         z++;
-        dog.counter = z;
-        return dog;
+        return new Cat.Dog();
     }
 
     @Override
@@ -60,15 +31,20 @@ public class Dog extends Animal {
     }
 
     @Override
+    public double getRunTime(double d, double b) {
+        runTime = d / b;
+        return runTime;
+    }
+
+    @Override
+    public double getSwimmingTime(double d, double b) {
+        swimmingTime = d / b;
+        return swimmingTime;
+    }
+
+    @Override
     public int getClassAnimail() {
         classAnimail = 1;
         return classAnimail;
     }
-
-    @Override
-    public String getKindOfAnimal() {
-        kindOfAnimal = "Собака: ";
-        return kindOfAnimal;
-    }
-
 }
