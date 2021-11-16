@@ -1,55 +1,30 @@
 package com.geekbrains.lesson6.Animal;
 
-public class Chicken extends Bird{
-    private static int z;
-    public static String lainChickenName = "Ряба, Раиса, Лена, Пеструшка, Пушинка, Снежа, Сказка";
+public class Chicken extends Animal{
+    private static int z = 1;
+    private static final String lainChickenColor = "Чёрный, Белый, Рыжий, Пятнистый";
+    private static final String lainChickenName = "Ряба, Раиса, Лена, Пеструшка, Пушинка, Снежа, Сказка";
+
     public Chicken() {
-        flight = 100;
+        setKindOfAnimal("Курочка:");
+        setCounter(z);
+        setName("Кличка:            - " + lainChickenName.split(", ")[(int) Math.round(Math.random() *
+                (lainChickenName.split(", ").length - 1))]);
+        setVoice(" - chicken crows - (Grow! Grow! Grow!)");
+        setCoatColor(lainChickenColor.split(", ")[(int) Math.round(Math.random() *
+                (lainChickenColor.split(", ").length - 1))]);
+        setAge(((int) Math.round(Math.random()*14) + 1));
+        setRun(((int) (Math.random() * 9)) + 1);
+        setRunSpeed(((int) (Math.random() * 5)) + 1);
+        setSwimming(0);
+        setSwimmingSpeed(0);
+        setClassAnimail(3);
     }
 
     @Override
-    public int getRun() {
-        run =  ((int) (Math.random() * 9)) + 1;
-        return run;
-    }
-
-    @Override
-    public double getRunSpeed() {
-        runSpeed = ((int) (Math.random() * 5)) + 1;
-        return runSpeed;
-    }
-
-    @Override
-    public double getRunTime(double d, double b) {
-        runTime = d/b;
-        return runTime;
-    }
-
-    @Override
-    public Bird clone() {
+    public Chicken clone() {
         Chicken chicken = new Chicken();
-        chicken.name = "Кличка:            - " + lainChickenName.split(", ")[(int) Math.round(Math.random() * (lainChickenName.split(", ").length - 1))];
         z++;
-        chicken.counter = z;
         return chicken;
-    }
-
-
-    @Override
-    public String getVoice() {
-        voice = " - chicken crows - (Сrow! Сrow! Сrow!)";
-        return voice;
-    }
-
-    @Override
-    public int getClassAnimail() {
-        classAnimail = 3;
-        return classAnimail;
-    }
-
-    @Override
-    public String getKindOfAnimal() {
-        kindOfAnimal = "Курочка:";
-        return kindOfAnimal;
     }
 }

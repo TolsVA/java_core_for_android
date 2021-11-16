@@ -1,27 +1,23 @@
 package com.geekbrains.lesson6.Animal;
 
 public abstract class Animal {
-    protected String kindOfAnimal;
-    protected  int counter;
-    protected String lainColor = "Чёрный, Белый, Рыжий, Пятнистый";
-    protected String name;
-    protected String coatColor;
-    protected int age;
-    protected String voice;
-    protected int run;                   // Бег дистанция
-    protected double runSpeed;           // Скорость передвижения по суше
-    protected double runTime;            // Время забега
-    protected int swimming;              // Плавание растояние
-    protected double swimmingSpeed;         // Скорость плавания
-    protected double swimmingTime;       // Время заплыва
-    protected int classAnimail;
+    private String kindOfAnimal;
+    private int counter;
+    private String name;
+    private String voice;
+    private String coatColor;
+    private int age;
+    private int run;                   // Бег дистанция
+    private double runSpeed;           // Скорость передвижения по суше
+    private int swimming;              // Плавание расстояние
+    private double swimmingSpeed;      // Скорость плавания
+    private int classAnimail;
 
     public Animal() {
     }
-    public Animal clone() {
-        return null;
-    }
 
+    public Animal clone() {
+        return null;}
 
     public String getKindOfAnimal() {
         return kindOfAnimal;
@@ -39,24 +35,24 @@ public abstract class Animal {
         this.counter = counter;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
 
     public void setName(String name) {
         this.name = name;
     }
 
     public String getCoatColor() {
-        return lainColor.split(", ")[(int) Math.round(Math.random() * (lainColor.split(", ").length - 1))];
+        return coatColor;
     }
+
     public void setCoatColor(String coatColor) {
         this.coatColor = coatColor;
     }
 
     public int getAge() {
-        return ((int) Math.round(Math.random()*14) + 1);
+        return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -86,11 +82,7 @@ public abstract class Animal {
     }
 
     public double getRunTime(double d, double b) {
-        return runTime;
-    }
-
-    public void setRunTime(double runTime) {
-        this.runTime = runTime;
+        return d / b;
     }
 
     public int getSwimming() {
@@ -109,13 +101,8 @@ public abstract class Animal {
         this.swimmingSpeed = swimmingSpeed;
     }
 
-
     public double getSwimmingTime(double d, double b) {
-        return swimmingTime;
-    }
-
-    public void setSwimmingTime(double swimmingTime) {
-        this.swimmingTime = swimmingTime;
+        return d / b;
     }
 
     public int getClassAnimail() {
@@ -125,5 +112,4 @@ public abstract class Animal {
     public void setClassAnimail(int classAnimail) {
         this.classAnimail = classAnimail;
     }
-
 }
