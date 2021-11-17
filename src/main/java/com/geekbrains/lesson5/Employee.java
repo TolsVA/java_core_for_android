@@ -65,72 +65,33 @@ public class Employee {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getPatronymic() {
         return patronymic;
     }
 
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
-    }
-
     public String getPosition() {
         return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPhone() {
         return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public int getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {this.salary = salary;}
-
     public int getAge() {return age;}
-
-    public void setAge(int age) {
-        if(age < 0) {
-            System.out.println("Невозможно присвоить возраст меньше 0");
-        } else {
-            this.age = age;
-        }
-    }
 
     public int getPersonnel() {
         return personnel;
     }
-
-    public void setPersonnel(int personnel) {
-        this.personnel = personnel;
-    }
-
 }
