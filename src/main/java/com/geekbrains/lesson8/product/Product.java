@@ -16,20 +16,31 @@ public class Product {
         setPerson(_person);
         setName(lainProduct[i]);
         if (_person.equals("sal")) {
-            setPrice(((int) (Math.random() * 9)) + 20);
-            setCount(((int) (Math.random() * 9)) + 20);
+            setPrice(((int) (Math.random() * 9)) + 10);
+            setCount(((int) (Math.random() * 9)) + 10);
             setSold(0);
             setProceeds(0);
         } else {
-            setPrice(0);
-            setCount(((int) (Math.random() * 9)) + 10);
-            setPrice(0);
+            setCount(((int) (Math.random() * 9)) + 20);
         }
         setRemainder(0);
     }
 
+    public Product(String _person, String _name, int _count, int _price, int _sold, String _salesmanN) {
+        setPerson(_person);
+        setName(_name);
+        setCount(_count);
+        setPrice(_price);
+        setSold(_sold);
+        setSalesmanN(_salesmanN);
+    }
+
     public void setSalesmanN(String salesmanN) {
         this.salesmanN = salesmanN;
+    }
+
+    public String getSalesmanN() {
+        return salesmanN;
     }
 
     public int getRemainder() {
@@ -66,25 +77,21 @@ public class Product {
                     ",   Цена = " + price +
                     ",   Начальное кол-во = " + count +
                     ",   Продано  = " + sold +
-                    ",   Остаток  = " + remainder +
-                    ",   Выручка  = " + proceeds + "\n\t\t\t  ";
+                    ",\tОстаток  = " + remainder +
+                    ",\tВыручка  = " + proceeds + "\n\t\t\t  ";
             return text;
         } else if (this.getPerson().equals("cus")){
             text = " " + name +
-                    ", \tНачальное кол-во = " + count +
-                    ", \tЦена = " + price +
-                    ", \tЗакуплено  = " + sold +
-                    ", \tОстаток  = " + remainder +
-                    ", \tРасходы  = " + proceeds +
-                    ", \t" + salesmanN + "\n\t\t\t  ";
+                    ", \tКол-во - " + count + " шт.\n\t\t\t  ";
             return text;
         } else {
             text = " " + name +
-                    ",\tЦена = \"Неизвестна\"" +
-                    ",\tНачальное кол-во = " + count +
-                    ",\tЗакуплено  = " + sold +
-                    ",\tОстаток  = " + remainder +
-                    ",\tРасходы  = " + proceeds + "\n\t\t\t  ";
+                    ", \tОстаток по списку - " + count +
+                    ",  \tЗакуплено  = " + sold +
+                    ", \tОстаток  = " + remainder +
+                    ", \tЦена = " + price +
+                    ", \tРасходы  = " + proceeds +
+                    ",  \t" + salesmanN + "\n\t\t\t  ";
             return text;
         }
     }
@@ -121,5 +128,4 @@ public class Product {
     public void setPerson(String person) {
         this.person = person;
     }
-
 }
