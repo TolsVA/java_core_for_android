@@ -1,23 +1,22 @@
 package com.geekbrains.lesson11_2.fruit;
 
-public abstract class Fruit {
-    private float wt;
+public class Fruit {
+    private String name;
+    private float weight;
 
-    public int getCount() {
-        return count;
+    public float getWeight() {
+        return weight;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
-    private int count;
-
-    public float getWt() {
-        return wt;
+    public String getName() {
+        return name;
     }
 
-    public void setWt(float wt) {
-        this.wt = wt;
+    public void setName(String name) {
+        this.name = name;
     }
 }
