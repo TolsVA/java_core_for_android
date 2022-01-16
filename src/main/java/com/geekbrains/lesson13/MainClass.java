@@ -6,6 +6,8 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import static java.lang.System.currentTimeMillis;
+
 public class MainClass {
     public static final int CARS_COUNT = 4;
     public static CyclicBarrier cd = new CyclicBarrier(CARS_COUNT);
@@ -30,6 +32,7 @@ public class MainClass {
             e.printStackTrace();
         }
         System.out.println();
+        time =  currentTimeMillis();
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
         System.out.println();
         try {
