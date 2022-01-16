@@ -13,6 +13,7 @@ public class MainClass {
     public static CountDownLatch cdStart = new CountDownLatch(CARS_COUNT);
     public static CountDownLatch cdFinish = new CountDownLatch(CARS_COUNT);
     public static Lock lock = new ReentrantLock();
+    public static long time;
 
     public static void main(String[] args) {
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!");
