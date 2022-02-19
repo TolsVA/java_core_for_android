@@ -1,8 +1,6 @@
 package com.geekbrains.lesson12_1;
 
 import java.util.Arrays;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import static java.lang.System.currentTimeMillis;
 
@@ -19,13 +17,9 @@ public class MyThread extends Thread{
 
     @Override
     public void run() {
-//        ExecutorService executorService = Executors.newFixedThreadPool(threadCount*2 +1);
-//        executorService.execute(() -> oneFlow(arr));
-//        executorService.execute(() -> twoFlows(arr, HALF, threadCount, executorService));
-
         new Thread(() -> oneFlow(arr)).start();
-        new Thread(() -> twoFlows(arr, HALF, threadCount)).start();
 
+        new Thread(() -> twoFlows(arr, HALF, threadCount)).start();
 
         synchronized (lock) {
             try {
@@ -35,8 +29,6 @@ public class MyThread extends Thread{
             }
             System.out.println("\nПроизводительность увеличена в " +
                     (s[0] / b[0]) + " раз.");
-
-//            executorService.shutdownNow();
         }
     }
 
@@ -50,7 +42,6 @@ public class MyThread extends Thread{
                 s[0] + " миллисекунд.");
     }
 
-//    public synchronized void twoFlows(float[] arr, int half, int r, ExecutorService executorService) {
     public synchronized void twoFlows(float[] arr, int half, int r) {
         System.out.println("\nПоток - " + Thread.currentThread().getId() + " запущен.");
         long a = currentTimeMillis();
@@ -64,14 +55,6 @@ public class MyThread extends Thread{
 
         for (int i = 0; i < r; i++) {
             int f = i;
-//            executorService.execute(() -> {
-//                System.out.println("Поток - " + Thread.currentThread().getId() + ".");
-//                reassign(arr1, f, r);
-//            });
-//            executorService.execute(() -> {
-//                System.out.println("Поток - " + Thread.currentThread().getId() + ".");
-//                reassign(arr2, f, r);
-//            });
             new Thread(() -> {
                 System.out.println("Поток - " + Thread.currentThread().getId() + ".");
                 reassign(arr1, f, r);

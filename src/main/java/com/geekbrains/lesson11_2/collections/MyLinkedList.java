@@ -3,8 +3,8 @@ package com.geekbrains.lesson11_2.collections;
 import java.util.ListIterator;
 
 public class MyLinkedList<T> {
-    private Node head;
-    private Node tail;
+    private Node<T> head;
+    private Node<T> tail;
 
     public MyLinkedList() {
         head = null;
@@ -16,7 +16,7 @@ public class MyLinkedList<T> {
     }
 
     public void addLast(T data) {
-        Node node = new Node(data);
+        Node<T> node = new Node<>(data);
         if (isEmpty())
             head = node;
         else
@@ -27,7 +27,7 @@ public class MyLinkedList<T> {
     }
 
     public void addLast(String s, MyLinkedList<T> data) {
-        Node node = new Node(s + data);
+        Node<T> node = new Node(s + data);
         if (isEmpty())
             head = node;
         else
@@ -38,14 +38,14 @@ public class MyLinkedList<T> {
     }
 
     public void addIndex(int index, T data) {
-        Node find = head;
+        Node<T> find = head;
         int c = 0;
         while (find != null && c != index) {
             find = find.next;
             c++;
         }
 
-        Node node = new Node(data);
+        Node<T> node = new Node<>(data);
 
         find.prev.next = node;
         node.prev = find.prev;
@@ -54,38 +54,41 @@ public class MyLinkedList<T> {
     }
 
     public void setIndex(int index, T _data) {
-        Node find = head;
+        Node<T> find = head;
         int c = 0;
         while (find != null && c != index) {
             find = find.next;
             c++;
         }
-        find.data = _data;
+        if (find != null) {
+            find.data = _data;
+        }
     }
 
     public T getIndex(int index) {
-        Node find = head;
+        Node<T> find = head;
         int c = 0;
         while (find != null && c != index) {
             find = find.next;
             c++;
         }
 
-        return (T) find.data;
+        assert find != null;
+        return find.data;
     }
 
     public T getFirst() {
-        Node find = head;
-        return (T) find.data;
+        Node<T> find = head;
+        return find.data;
     }
 
     public T getLast() {
-        Node find = tail;
-        return (T) find.data;
+        Node<T> find = tail;
+        return find.data;
     }
 
     public void setKeyAll(T key, T key1) {
-        Node find = head;
+        Node<T> find = head;
         while (find != null) {
             while (find.data != key) {
                 find = find.next;
@@ -117,7 +120,7 @@ public class MyLinkedList<T> {
     }
 
     public void removeKeyAll(T key) {
-        Node find = head;
+        Node<T> find = head;
         while (find != null) {
             while (find.data != key) {
                 find = find.next;
@@ -140,7 +143,7 @@ public class MyLinkedList<T> {
     }
 
     public void removeIndex(int index) {
-        Node find = head;
+        Node<T> find = head;
         int c = 0;
         while (find != null && c != index) {
             find = find.next;
@@ -160,7 +163,7 @@ public class MyLinkedList<T> {
     }
 
     public int size() {
-        Node node = head;
+        Node<T> node = head;
         int size = 0;
         while (node != null) {
             size++;
@@ -170,7 +173,7 @@ public class MyLinkedList<T> {
     }
 
     public void print() {
-        Node node = head;
+        Node<T> node = head;
         System.out.print("[");
         while (node != null) {
             if (node.next != null)
@@ -185,7 +188,7 @@ public class MyLinkedList<T> {
     }
 
         public void print1() {
-        Node node = tail;
+        Node<T> node = tail;
         System.out.print("[");
         while (node != null) {
             if (node.prev != null) {
@@ -202,13 +205,9 @@ public class MyLinkedList<T> {
 
     @Override
     public String toString() {
-        Node node = head;
+        Node<T> node = head;
         StringBuilder sb = new StringBuilder();
-        if (node == head) {
-            sb.append("[   ");
-        } else {
-            sb.append("[");
-        }
+        sb.append("[   ");
         int s = 0;
         while (node != null) {
             sb.append(node.data);
@@ -238,7 +237,6 @@ public class MyLinkedList<T> {
             private Node<T> n = head;
 
             public boolean hasNext() {
-//                return n.next != tail;
                 return n.next != null;
             }
 
